@@ -1,0 +1,156 @@
+@import "./variables";
+
+.el-search {
+  .el-input-group__append, .el-input-group__prepend {
+    //background: none;
+    //border-left: 0;
+  }
+
+  .el-input__inner {
+    //border-right: 0;
+    width: 240px;
+  }
+
+  .el-icon-search {
+    font-size: 18px;
+  }
+}
+
+.main-table {
+  width: auto !important;
+  margin: 0 1%;
+
+  th {
+    background: $secondaryBlue;
+    color: $secondaryColorLevel1;
+  }
+
+  .button-danger {
+    color: $danger
+  }
+
+  //.el-icon-arrow-right:before{ content: '查看详情'}
+
+  .table-expand {
+    .el-form-item {
+      width: 45%;
+    }
+
+    .el-form-item__label {
+      width: 150px;
+      text-align: right;
+
+      &:after {
+        content: '：'
+      }
+    }
+  }
+}
+
+.el-pagination-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fill-add-edit-form {
+  .button {
+    width: 112px;
+  }
+
+  .el-form-item {
+    margin-bottom: 32px;
+
+    .el-input {
+      width: 300px
+    }
+  }
+
+  .textarea_1 {
+    width: 560px
+  }
+
+  .textarea_1 .el-textarea__inner {
+    width: 560px;
+    height: 124px;
+  }
+
+  .tree-box {
+    width: 300px;
+    border: 1px solid $borderColor1;
+
+  }
+}
+
+.fill-form-box {
+  padding-top: 30px;
+
+  .form-title {
+    padding-left: 30px;
+    font-weight: normal;
+    margin-bottom: 30px
+  }
+
+  .textarea_1 .el-textarea__inner {
+    width: 560px;
+    height: 124px;
+  }
+
+  .input_1 {
+    width: 560px;
+  }
+
+  .input_2 {
+    width: 300px;
+  }
+
+  //.el-radio-group{ padding-top: 15px}
+}
+
+.filter-box {
+  padding: 35px 0;
+
+  .el-form-item {
+    width: 45%
+  }
+
+  .filter-box-button {
+    width: 100%;
+    padding-left: 40px;
+  }
+
+  .input_1 {
+    .el-input__inner {
+      width: 300px;
+    }
+  }
+}
+.handle-button{
+  padding:0 20px 20px 20px;
+}
+
+.el-dialog {
+  .el-dialog__footer {
+    text-align: center;
+  }
+}
+
+.el-drawer__wrapper {
+  .el-drawer__header {
+    height: 90px;
+    font-size: 24px;
+    text-indent: 20px;
+    color: $secondaryColorLevel1;
+    font-weight: bolder;
+  }
+
+  .second-title {
+    height: 60px;
+    line-height: 60px;
+    background: #F8FBFF;
+    text-indent: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+.table{ margin-bottom: 20px;}

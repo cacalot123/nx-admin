@@ -1,0 +1,34 @@
+@import "src/styles/variables.scss";
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #E8E8E8;
+  .handle-button{
+    flex: 1;}
+}
+
+
+.main-title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: $secondaryColorLevel1;
+}
+
+.main-info {
+  color: $secondaryColorLevel2;
+  font-size: 12px;
+  overflow: hidden;
+  position: relative;
+  margin-left: -10px;
+  margin-bottom: 30px;
+
+  .col {
+    float: left;
+    position: relative;
+    left: -1px;
+    padding: 0 10px;
+    border-left: 1px solid $secondaryColorLevel4;
+  }
+}

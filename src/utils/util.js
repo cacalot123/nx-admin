@@ -13,8 +13,10 @@ export const loadStyle = url => {
 /**
  * 设置浏览器头部标题
  */
-export const setTitle = function(title) {
-  title = title ? `${title}` : 'NxAdmin'
-  window.document.title = title + '-nxAdmin'
+export const setTitle = (title) => {
+  const tit = title ? `${title}-` : '';
+  const system = 'XXXX运营后台';
+  window.document.title = `${tit}${system}`
+  localStorage.setItem('title', system)
 }
 

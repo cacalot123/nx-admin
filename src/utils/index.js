@@ -2,6 +2,12 @@
  * Created by jiachenpan on 16/11/18.
  */
 
+import {keyValueToJson} from './keyValueToJson';
+import {setAmount} from './amount';
+import {listToTree} from './listToTree';
+import {getUrlParams, serilizeURL} from './getUrl.js';
+import { download } from './download'
+
 export function parseTime(time, cFormat) {
   if (arguments.length === 0) {
     return null
@@ -56,6 +62,7 @@ export function formatTime(time, option) {
     return d.getMonth() + 1 + '月' + d.getDate() + '日' + d.getHours() + '时' + d.getMinutes() + '分'
   }
 }
+
 export function param2Obj(url) {
   const search = url.split('?')[1]
   if (!search) {
@@ -64,3 +71,11 @@ export function param2Obj(url) {
   return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
 }
 
+export {
+  keyValueToJson,
+  setAmount,
+  listToTree,
+  getUrlParams,
+  serilizeURL,
+  download
+}

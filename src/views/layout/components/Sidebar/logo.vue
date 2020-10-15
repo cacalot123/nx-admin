@@ -50,6 +50,7 @@ export default {
   opacity: 0;
 }
 .logo {
+  visibility: hidden;
   position: relative;
   display: flex;
   justify-content: center;

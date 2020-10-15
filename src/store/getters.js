@@ -15,7 +15,8 @@ const getters = {
   visitedViews: state => state.tagsView.visitedViews,
   cachedViews: state => state.tagsView.cachedViews,
   browserHeaderTitle: state => state.user.browserHeaderTitle,
-  errorLogs: state => state.errorLog.logs
-
+  userInfo: state => state.user.userInfo,
+  menu: state => state.menuId,
+  dept: state => state.dept
 }
 export default getters

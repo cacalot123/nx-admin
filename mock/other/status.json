@@ -1,0 +1,191 @@
+/* **
+ * 状态
+ *
+ *  @url /status
+ * **/
+
+
+{
+  "status": "success",
+  "result": {
+    "member_type": [
+      {
+        "name": "\u4e2a\u4eba",
+        "code": 1
+      },
+      {
+        "name": "\u4f01\u4e1a",
+        "code": 2
+      }
+    ],
+    "member_personal_marital_status": [
+      {
+        "name": "\u5355\u8eab",
+        "code": 1
+      },
+      {
+        "name": "\u5df2\u5a5a",
+        "code": 2
+      },
+      {
+        "name": "\u79bb\u5a5a",
+        "code": 3
+      },
+      {
+        "name": "\u4e27\u5076",
+        "code": 4
+      }
+    ],
+    "member_personal_employment_status": [
+      {
+        "name": "\u516c\u52a1\u5458",
+        "code": 1
+      },
+      {
+        "name": "\u79c1\u4eba\u4f01\u4e1a\u53d7\u96c7\u8005",
+        "code": 2
+      },
+      {
+        "name": "\u81ea\u8425\u8005",
+        "code": 3
+      },
+      {
+        "name": "\u5bb6\u7ba1",
+        "code": 4
+      },
+      {
+        "name": "\u5b66\u751f",
+        "code": 5
+      },
+      {
+        "name": "\u9000\u4f11\u8005",
+        "code": 6
+      },
+      {
+        "name": "\u65e0\u4e1a\u8005",
+        "code": 7
+      },
+      {
+        "name": "\u5176\u4ed6",
+        "code": 0
+      }
+    ],
+    "member_personal_gender": [
+      {
+        "name": "\u672a\u8bbe\u7f6e",
+        "code": 0
+      },
+      {
+        "name": "\u7537",
+        "code": 1
+      },
+      {
+        "name": "\u5973",
+        "code": 2
+      }
+    ],
+    "member_bank_currency": [
+      {
+        "name": "\u7f8e\u5143",
+        "code": 1
+      },
+      {
+        "name": "\u6e2f\u5e01",
+        "code": 2
+      }
+    ],
+    "invest_investment_currency": [
+      {
+        "name": "\u672a\u8bbe\u7f6e",
+        "code": 0
+      },
+      {
+        "name": "\u7f8e\u5143",
+        "code": 1
+      },
+      {
+        "name": "\u4eba\u6c11\u5e01",
+        "code": 2
+      },
+      {
+        "name": "\u65e5\u5143",
+        "code": 3
+      },
+      {
+        "name": "\u65b0\u53f0\u5e01",
+        "code": 4
+      }
+    ],
+    "invest_years": [
+      {
+        "name": "\u672a\u8bbe\u7f6e",
+        "code": 0
+      },
+      {
+        "name": "6\u4e2a\u6708",
+        "code": 6
+      },
+      {
+        "name": "12\u4e2a\u6708",
+        "code": 12
+      },
+      {
+        "name": "24\u4e2a\u6708",
+        "code": 24
+      }
+    ],
+    "invest_pay_interest": [
+      {
+        "name": "\u672a\u8bbe\u7f6e",
+        "code": 0
+      },
+      {
+        "name": "\u6309\u6708\u4ed8\u606f",
+        "code": 1
+      },
+      {
+        "name": "\u6309\u5b63\u4ed8\u606f",
+        "code": 2
+      },
+      {
+        "name": "\u6309\u5e74\u4ed8\u606f",
+        "code": 3
+      }
+    ],
+    "invest_interest_payment_currency": [
+      {
+        "name": "\u672a\u8bbe\u7f6e",
+        "code": 0
+      },
+      {
+        "name": "\u7f8e\u5143",
+        "code": 1
+      },
+      {
+        "name": "\u4eba\u6c11\u5e01",
+        "code": 2
+      },
+      {
+        "name": "\u65e5\u5143",
+        "code": 3
+      },
+      {
+        "name": "\u65b0\u53f0\u5e01",
+        "code": 4
+      }
+    ],
+    "status": [
+      {
+        "name": "开启",
+        "code": 1
+      },
+      {
+        "name": "关闭",
+        "code": 0
+      }
+    ]
+  }
+}
+
+
+

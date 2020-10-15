@@ -7,8 +7,15 @@ import getters from './getters'
 import fullScreen from './modules/fullScreen'
 import permission from './modules/permission'
 import tagsView from './modules/tagsView'
-import errorLog from './modules/errorLog'
+import VuexORM from '@vuex-orm/core'
+// import User from '@/model/user'
+import status from './modules/status'
+
 Vue.use(Vuex)
+
+const database = new VuexORM.Database()
+
+// database.register(User)
 
 const store = new Vuex.Store({
   modules: {
@@ -18,10 +25,10 @@ const store = new Vuex.Store({
     fullScreen,
     permission,
     tagsView,
-    errorLog
-
+    status
   },
-  getters
+  getters,
+  plugins: [VuexORM.install(database)]
 })
 
 export default store

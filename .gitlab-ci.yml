@@ -1,0 +1,13 @@
+stages:
+  - deploy
+
+job1:
+  stage: deploy
+  only:
+    - master
+  script:
+      - source ~/.bashrc
+      - export PATH="/usr/local/bin:$PATH"
+      - cp -rp ../admin-node_modules ./node_modules
+      - /usr/local/bin/yarn run build:sit
+      - scp -rp dist/* dev@172.28.250.24:/data/code/rights-coupon-admin/

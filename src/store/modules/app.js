@@ -18,6 +18,7 @@ const app = {
         Cookies.set('sidebarStatus', 0)
       }
       state.sidebar.opened = !state.sidebar.opened
+
       state.sidebar.withoutAnimation = false
     },
     // 中英文
@@ -26,7 +27,7 @@ const app = {
       Cookies.set('language', language)
     },
     CLOSE_SIDEBAR: (state, withoutAnimation) => {
-      Cookies.set('sidebarStatus', 1)
+      Cookies.set('sidebarStatus', 0)
       state.sidebar.opened = false
       state.sidebar.withoutAnimation = withoutAnimation
     },

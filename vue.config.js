@@ -53,8 +53,16 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      '^/api': {
+        target: 'http://127.0.0.1:3100', // 接口的域名
+        changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
+        logLevel: 'debug'
+      }
     }
   },
+
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.

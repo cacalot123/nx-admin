@@ -12,7 +12,6 @@ export default {
     Default: 'Default'
   },
   route: {
-    AliIcons: 'AliIcons',
     list: 'list',
     Digitalanimation: 'Digitalanimation',
     Rollingpositioning: 'Rollingpositioning',
@@ -78,15 +77,7 @@ export default {
     uploadExcel: 'Upload Excel',
     zip: 'Zip',
     exportZip: 'Export Zip',
-    i18n: 'i18n',
-    Errorlog: 'Errorlog',
-    svgicons: 'svgicons',
-    fontawesome: 'fontawesome',
-    pointMap: 'pointMap',
-    roadBookMap: 'roadBookMap',
-    cityLlistMap: 'cityLlistMap',
-    baidumap: 'baidumap',
-    gpsMap: 'gpsMap'
+    i18n: 'i18n'
   },
   excel: {
     export: 'Export',
@@ -114,10 +105,5 @@ export default {
     close: 'Close',
     closeOthers: 'Close Others',
     closeAll: 'Close All'
-  },
-  errorLog: {
-    tips: 'tips',
-    description: 'description',
-    documentation: 'documentation'
   }
 }

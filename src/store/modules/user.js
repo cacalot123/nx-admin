@@ -1,25 +1,15 @@
-import { login, logout, getInfo } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
-import {
-  setStore,
-  getStore,
-  removeStore
-} from '@/utils/store'
+import {loginPwd, userInfo} from '@/api/user';
+
+import {getToken, removeToken, setToken} from '@/utils/auth'
+
 const user = {
   state: {
     token: getToken(),
     name: '',
     avatar: '',
     roles: [],
-    isLock: getStore({
-      name: 'isLock'
-    }) || false,
-    lockPasswd: getStore({
-      name: 'lockPasswd'
-    }) || '',
-    browserHeaderTitle: getStore({
-      name: 'browserHeaderTitle'
-    }) || 'NxAdmin'
+    userInfo: []
+
   },
 
   mutations: {
@@ -35,47 +25,25 @@ const user = {
     SET_ROLES: (state, roles) => {
       state.roles = roles
     },
-    SET_LOCK_PASSWD: (state, lockPasswd) => {
-      state.lockPasswd = lockPasswd
-      setStore({
-        name: 'lockPasswd',
-        content: state.lockPasswd,
-        type: 'session'
-      })
-    },
-    SET_LOCK: (state, action) => {
-      state.isLock = true
-      setStore({
-        name: 'isLock',
-        content: state.isLock,
-        type: 'session'
-      })
-    },
-    CLEAR_LOCK: (state, action) => {
-      state.isLock = false
-      state.lockPasswd = ''
-      removeStore({
-        name: 'lockPasswd'
-      })
-      removeStore({
-        name: 'isLock'
-      })
-    },
-    SET_BROWSERHEADERTITLE: (state, action) => {
-      state.browserHeaderTitle = action.browserHeaderTitle
+    SET_INFO: (state, userInfo) => {
+      state.userInfo = userInfo
     }
-
   },
 
   actions: {
     // 登录
-    Login({ commit }, userInfo) {
-      const username = userInfo.username.trim()
+    Login({commit}, formData) {
+      // const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
-        login(username, userInfo.password).then(response => {
+        loginPwd({
+          name: formData.name,
+          password: formData.password
+        }).then(response => {
           const data = response
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
+          setToken(data['rights-coupon'])
+          localStorage.setItem('id', data.id)
+          // commit('SET_TOKEN', data.key)
+          commit('SET_INFO', {id: data.id, name: data.name, mobile: data.mobile, other: data})
           resolve()
         }).catch(error => {
           reject(error)
@@ -84,17 +52,20 @@ const user = {
     },
 
     // 获取用户信息
-    GetInfo({ commit, state }) {
+    GetInfo({commit, state}) {
       return new Promise((resolve, reject) => {
-        getInfo(state.token).then(response => {
+        userInfo({id: localStorage.getItem('id')}).then(response => {
           const data = response
-          if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
-            commit('SET_ROLES', data.roles)
+          if (data.permissions && data.permissions.length > 0) { // 验证返回的roles是否是一个非空数组
+            commit('SET_ROLES', data.permissions)
           } else {
-            reject('getInfo: roles must be a non-null array !')
+            reject('该用户还没有权限，请先联系管理员配置权限')
+            // console.log('该用户还没有权限')
           }
-          commit('SET_NAME', data.name)
-          commit('SET_AVATAR', data.avatar)
+          commit('SET_NAME', data.login_name)
+          commit('SET_INFO', {id: data.id, name: data.login_name, mobile: data.mobile, other: data})
+          // setToken(data.key)
+          // commit('SET_AVATAR', data.avatar)
           resolve(response)
         }).catch(error => {
           reject(error)
@@ -103,22 +74,19 @@ const user = {
     },
 
     // 登出
-    LogOut({ commit, state }) {
+    LogOut({commit, state}) {
       return new Promise((resolve, reject) => {
-        logout(state.token).then(() => {
-          commit('SET_TOKEN', '')
-          commit('SET_ROLES', [])
-          commit('CLEAR_LOCK')
-          removeToken()
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
+        commit('SET_TOKEN', '')
+        commit('SET_ROLES', [])
+        commit('SET_INFO', [])
+
+        removeToken()
+        resolve()
       })
     },
 
     // 前端 登出
-    FedLogOut({ commit }) {
+    FedLogOut({commit}) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
         removeToken()
@@ -126,19 +94,29 @@ const user = {
       })
     },
     // 动态修改权限
-    ChangeRoles({ commit }, role) {
+    ChangeRoles({commit}, role) {
       return new Promise(resolve => {
         commit('SET_TOKEN', role)
         setToken(role)
-        getInfo(role).then(response => {
+        userInfo(role).then(response => {
           const data = response
           commit('SET_ROLES', data.roles)
+
+          // commit('SET_ROLES', data.permissions)
+
           commit('SET_NAME', data.name)
           commit('SET_AVATAR', data.avatar)
           resolve()
         })
       })
+    },
+    // 直接注入token
+
+    InsertToken({commit}, token) {
+      commit('SET_TOKEN', token)
+      setToken(token)
     }
+
   }
 }
 

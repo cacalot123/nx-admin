@@ -3,15 +3,15 @@
     <nx-scroll-pane class='tags-view-wrapper' ref='scrollPane'>
       <router-link ref='tag' class="tags-view-item" :class="isActive(tag)?'active':''" v-for="tag in Array.from(visitedViews)"
         :to="tag.path" :key="tag.path" @contextmenu.prevent.native="openMenu(tag,$event)">
-        {{generateTitle(tag.title)}}
+        {{tag.title}}
         <span class='el-icon-close' @click.prevent.stop='closeSelectedTag(tag)'></span>
       </router-link>
     </nx-scroll-pane>
-    <ul class='contextmenu' v-show="visible" :style="{left:left+'px',top:top+'px'}">
-      <li @click="closeSelectedTag(selectedTag)">{{$t('tagsView.close')}}</li>
-      <li @click="closeOthersTags">{{$t('tagsView.closeOthers')}}</li>
-      <li @click="closeAllTags">{{$t('tagsView.closeAll')}}</li>
-    </ul>
+<!--    <ul class='contextmenu' v-show="visible" :style="{left:left+'px',top:top+'px'}">-->
+<!--      <li @click="closeSelectedTag(selectedTag)">{{$t('tagsView.close')}}</li>-->
+<!--      <li @click="closeOthersTags">{{$t('tagsView.closeOthers')}}</li>-->
+<!--      <li @click="closeAllTags">{{$t('tagsView.closeAll')}}</li>-->
+<!--    </ul>-->
   </div>
 </template>
 
@@ -138,9 +138,9 @@ export default {
         margin-left: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #3889ED;
         color: #fff;
-        border-color: #42b983;
+        border-color: #3889ED;
         &::before {
           content: '';
           background: #fff;
@@ -150,6 +150,9 @@ export default {
           border-radius: 50%;
           position: relative;
           margin-right: 2px;
+        }
+        &:hover {
+           color: #ffffff !important;
         }
       }
     }

@@ -32,7 +32,8 @@ export default {
       if (first && first.name !== 'dashboard') {
         matched = [{ path: '/dashboard', meta: { title: 'Dashboard' }}].concat(matched)
       }
-      this.levelList = matched
+      matched.shift();
+      this.levelList = matched;
     }
   }
 }

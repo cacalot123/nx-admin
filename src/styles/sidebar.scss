@@ -3,15 +3,19 @@
   .main-container {
     min-height: 100%;
     transition: margin-left .28s;
-    margin-left: 210px;
+    margin-left: 180px;
+    margin-top: 68px;
+    border:20px solid #f0f3fa;
+    border-top: 0 none;
+
   } // 侧边栏
   .sidebar-container {
     transition: width 0.28s;
-    width: 210px !important;
+    width: 180px !important;
     height: 100%;
     position: fixed;
     font-size: 0px;
-    top: 0;
+    top: 68px;
     bottom: 0;
     left: 0;
     z-index: 1001;
@@ -38,7 +42,7 @@
     }
     .el-menu {
       border: none;
-      height: 100%;
+      height: calc(100% - 68px);
       width: 100% !important;
     }
   }
@@ -82,9 +86,12 @@
   .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
   .sidebar-container .el-submenu .el-menu-item {
     min-width: 180px !important;
-    background-color: $subMenuBg !important;
+    padding-right: 0;
+    //background-color: $subMenuBg !important;
+    span{display: block}
     &:hover {
-      background-color: $menuHover !important;
+      //background-color: $menuHover !important;
+      //color: #FFFFFF;
     }
   }
   .el-menu--collapse .el-menu .el-submenu {

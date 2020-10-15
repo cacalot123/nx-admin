@@ -1,4 +1,17 @@
-import { asyncRouterMap, constantRouterMap } from '@/router'
+import {constantRouterMap} from '@/router'
+
+function convertKeyValue(permissions = []) {
+  const keyValue = {};
+  permissions.map((v) => {
+    Object.assign(keyValue, {
+      [v.match]: {
+        parent_id: v.parent_id,
+        id: v.id
+      }
+    })
+  })
+  return keyValue;
+}
 
 /**
  * 通过meta.role判断是否与当前用户权限匹配
@@ -6,8 +19,9 @@ import { asyncRouterMap, constantRouterMap } from '@/router'
  * @param route
  */
 function hasPermission(roles, route) {
-  if (route.meta && route.meta.roles) {
-    return roles.some(role => route.meta.roles.indexOf(role) >= 0)
+  if (route.name) {
+    // console.log('roles[route.name]', roles[route.name])
+    return roles[route.name]
   } else {
     return true
   }
@@ -20,6 +34,8 @@ function hasPermission(roles, route) {
  */
 function filterAsyncRouter(asyncRouterMap, roles) {
   const accessedRouters = asyncRouterMap.filter(route => {
+    // console.log('roles', roles)
+    // console.log('route', route)
     if (hasPermission(roles, route)) {
       if (route.children && route.children.length) {
         route.children = filterAsyncRouter(route.children, roles)
@@ -40,26 +56,16 @@ const permission = {
     SET_ROUTERS: (state, routers) => {
       state.addRouters = routers
       state.routers = constantRouterMap.concat(routers)
-      console.log('state.routers', state.routers)
     }
   },
   actions: {
-    GenerateRoutes({ commit }, data) {
-      return new Promise(resolve => {
-        const { roles } = data
-        let accessedRouters
-        if (roles.indexOf('admin') >= 0) {
-          console.log('admin>=0')
-          accessedRouters = asyncRouterMap
-        } else {
-          console.log('admin<0')
-          accessedRouters = filterAsyncRouter(asyncRouterMap, roles)
-          // accessedRouters = ''
-          // accessedRouters = asyncRouterMap
-        }
-        console.log('accessedRouters', accessedRouters)
-        commit('SET_ROUTERS', accessedRouters)
-        resolve()
+    GenerateRoutes({commit}, {asyncRouterList, permissions}) {
+      return new Promise((resolve) => {
+        // loop(asyncRouterList, convertKeyValue(permissions))
+        // const permissionsTree = listToTree(resRouter, null, 0);
+        const permissionsTree = filterAsyncRouter(asyncRouterList, convertKeyValue(permissions))
+        commit('SET_ROUTERS', permissionsTree)
+        resolve(permissionsTree)
       })
     }
   }

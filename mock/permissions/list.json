@@ -1,0 +1,563 @@
+/* **
+ * 角色权限列表
+ *
+ *  @url /list
+ * **/
+
+
+{
+  "status": "success",
+  "result": {
+    "rows": [
+      {
+        "id": 48,
+        "parent_id": null,
+        "name": "",
+        "match": "\/",
+        "status": 1,
+        "created_at": "2020-04-21 15:06:17",
+        "updated_at": "2020-04-21 15:06:17"
+      },
+      {
+        "id": 49,
+        "parent_id": null,
+        "name": "\u89d2\u8272\u6743\u9650",
+        "match": "roles",
+        "status": 1,
+        "created_at": "2020-04-22 10:35:50",
+        "updated_at": "2020-04-22 16:06:17"
+      },
+      {
+        "id": 50,
+        "parent_id": 49,
+        "name": "\u89d2\u8272\u7ba1\u7406",
+        "match": "roles\/list",
+        "status": 1,
+        "created_at": "2020-04-22 10:36:13",
+        "updated_at": "2020-04-22 16:06:24"
+      },
+      {
+        "id": 51,
+        "parent_id": 49,
+        "name": "\u7528\u6237\u7ba1\u7406",
+        "match": "roles\/userList",
+        "status": 1,
+        "created_at": "2020-04-22 10:37:34",
+        "updated_at": "2020-04-22 16:06:30"
+      },
+      {
+        "id": 52,
+        "parent_id": null,
+        "name": "\u5546\u6237\u7ba1\u7406",
+        "match": "supplier",
+        "status": 1,
+        "created_at": "2020-04-24 17:48:12",
+        "updated_at": "2020-07-27 17:27:07"
+      },
+      {
+        "id": 53,
+        "parent_id": 52,
+        "name": "\u4f9b\u5e94\u5546\u5217\u8868",
+        "match": "supplier\/list",
+        "status": 1,
+        "created_at": "2020-04-24 17:48:38",
+        "updated_at": "2020-04-24 17:48:38"
+      },
+      {
+        "id": 54,
+        "parent_id": null,
+        "name": "\u5546\u54c1\u7ba1\u7406",
+        "match": "goods",
+        "status": 1,
+        "created_at": "2020-04-27 13:20:14",
+        "updated_at": "2020-04-27 13:20:14"
+      },
+      {
+        "id": 55,
+        "parent_id": 54,
+        "name": "\u5546\u54c1\u5217\u8868",
+        "match": "goods\/list",
+        "status": 1,
+        "created_at": "2020-04-27 13:20:38",
+        "updated_at": "2020-04-27 13:20:38"
+      },
+      {
+        "id": 56,
+        "parent_id": 54,
+        "name": "\u989d\u5ea6\u7ba1\u7406",
+        "match": "goods\/quota",
+        "status": 1,
+        "created_at": "2020-04-27 17:51:56",
+        "updated_at": "2020-04-27 17:54:30"
+      },
+      {
+        "id": 57,
+        "parent_id": null,
+        "name": "\u5238\u7801\u6279\u6b21",
+        "match": "batch_coupon",
+        "status": 1,
+        "created_at": "2020-05-11 16:49:30",
+        "updated_at": "2020-05-11 16:50:05"
+      },
+      {
+        "id": 58,
+        "parent_id": 57,
+        "name": "\u6279\u6b21\u7ba1\u7406",
+        "match": "batch\/list",
+        "status": 1,
+        "created_at": "2020-05-11 16:50:33",
+        "updated_at": "2020-05-11 16:50:33"
+      },
+      {
+        "id": 59,
+        "parent_id": 57,
+        "name": "\u5238\u7801\u7ba1\u7406",
+        "match": "coupon\/list",
+        "status": 1,
+        "created_at": "2020-05-12 10:09:16",
+        "updated_at": "2020-05-12 10:09:26"
+      },
+      {
+        "id": 61,
+        "parent_id": null,
+        "name": "\u8ba2\u5355",
+        "match": "order",
+        "status": 1,
+        "created_at": "2020-05-12 17:26:32",
+        "updated_at": "2020-05-12 17:27:18"
+      },
+      {
+        "id": 62,
+        "parent_id": 61,
+        "name": "\u8ba2\u5355\u5217\u8868",
+        "match": "order\/list",
+        "status": 1,
+        "created_at": "2020-05-12 17:31:00",
+        "updated_at": "2020-05-12 17:31:18"
+      },
+      {
+        "id": 66,
+        "parent_id": 52,
+        "name": "\u5206\u9500\u5546\u5217\u8868",
+        "match": "distributor\/list",
+        "status": 1,
+        "created_at": "2020-05-13 09:36:11",
+        "updated_at": "2020-05-13 09:36:11"
+      },
+      {
+        "id": 67,
+        "parent_id": null,
+        "name": "\u6838\u9500\u9886\u7528",
+        "match": "coupon_use",
+        "status": 1,
+        "created_at": "2020-05-14 17:03:29",
+        "updated_at": "2020-05-14 17:04:09"
+      },
+      {
+        "id": 68,
+        "parent_id": 67,
+        "name": "\u5238\u7801\u9886\u7528",
+        "match": "coupon_use\/list",
+        "status": 1,
+        "created_at": "2020-05-14 17:04:57",
+        "updated_at": "2020-05-14 17:04:57"
+      },
+      {
+        "id": 69,
+        "parent_id": 67,
+        "name": "\u6838\u9500\u7ba1\u7406",
+        "match": "coupon_use\/verify",
+        "status": 1,
+        "created_at": "2020-05-14 17:05:15",
+        "updated_at": "2020-05-14 17:05:28"
+      },
+      {
+        "id": 71,
+        "parent_id": 58,
+        "name": "\u65b0\u589e",
+        "match": "batch\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-08 14:58:54",
+        "updated_at": "2020-06-08 16:15:03"
+      },
+      {
+        "id": 72,
+        "parent_id": 58,
+        "name": "\u67e5\u8be2",
+        "match": "batch\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-08 15:18:25",
+        "updated_at": "2020-06-08 15:56:56"
+      },
+      {
+        "id": 74,
+        "parent_id": 58,
+        "name": "\u7f16\u8f91",
+        "match": "batch\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-08 15:25:17",
+        "updated_at": "2020-06-08 15:57:00"
+      },
+      {
+        "id": 75,
+        "parent_id": 59,
+        "name": "\u67e5\u8be2",
+        "match": "coupon\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-08 15:55:10",
+        "updated_at": "2020-06-08 16:00:00"
+      },
+      {
+        "id": 76,
+        "parent_id": 59,
+        "name": "\u67e5\u770b\u5238\u7801",
+        "match": "coupon\/list\/password",
+        "status": 1,
+        "created_at": "2020-06-08 16:02:00",
+        "updated_at": "2020-06-08 16:02:18"
+      },
+      {
+        "id": 77,
+        "parent_id": 59,
+        "name": "\u7f16\u8f91",
+        "match": "coupon\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-08 16:04:50",
+        "updated_at": "2020-06-08 16:04:57"
+      },
+      {
+        "id": 78,
+        "parent_id": 53,
+        "name": "\u67e5\u8be2",
+        "match": "supplier\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-08 16:13:52",
+        "updated_at": "2020-06-08 16:16:34"
+      },
+      {
+        "id": 79,
+        "parent_id": 53,
+        "name": "\u65b0\u589e",
+        "match": "supplier\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-08 16:14:33",
+        "updated_at": "2020-06-08 16:15:17"
+      },
+      {
+        "id": 80,
+        "parent_id": 53,
+        "name": "\u7f16\u8f91",
+        "match": "supplier\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-08 16:16:28",
+        "updated_at": "2020-06-08 16:16:28"
+      },
+      {
+        "id": 81,
+        "parent_id": 53,
+        "name": "\u5bfc\u51fa",
+        "match": "supplier\/list\/export",
+        "status": 1,
+        "created_at": "2020-06-08 16:17:38",
+        "updated_at": "2020-06-08 16:17:38"
+      },
+      {
+        "id": 82,
+        "parent_id": 66,
+        "name": "\u67e5\u8be2",
+        "match": "distributor\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 11:33:41",
+        "updated_at": "2020-06-09 11:35:20"
+      },
+      {
+        "id": 83,
+        "parent_id": 66,
+        "name": "\u65b0\u589e",
+        "match": "distributor\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-09 11:34:13",
+        "updated_at": "2020-06-09 11:35:28"
+      },
+      {
+        "id": 84,
+        "parent_id": 66,
+        "name": "\u7f16\u8f91",
+        "match": "distributor\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 11:34:34",
+        "updated_at": "2020-06-09 11:35:30"
+      },
+      {
+        "id": 85,
+        "parent_id": null,
+        "name": "\u62a5\u8868\u7ba1\u7406",
+        "match": "report",
+        "status": 1,
+        "created_at": "2020-06-09 13:30:53",
+        "updated_at": "2020-06-09 14:26:27"
+      },
+      {
+        "id": 86,
+        "parent_id": 85,
+        "name": "\u4f9b\u5e94\u5546\u62a5\u8868",
+        "match": "report\/supplier",
+        "status": 1,
+        "created_at": "2020-06-09 14:26:53",
+        "updated_at": "2020-06-09 14:26:53"
+      },
+      {
+        "id": 87,
+        "parent_id": 85,
+        "name": "\u5206\u9500\u5546\u62a5\u8868",
+        "match": "report\/distributor",
+        "status": 1,
+        "created_at": "2020-06-09 14:27:15",
+        "updated_at": "2020-06-09 14:27:15"
+      },
+      {
+        "id": 88,
+        "parent_id": 55,
+        "name": "\u67e5\u8be2",
+        "match": "goods\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 17:40:30",
+        "updated_at": "2020-06-09 17:40:40"
+      },
+      {
+        "id": 89,
+        "parent_id": 55,
+        "name": "\u65b0\u589e",
+        "match": "goods\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-09 17:43:59",
+        "updated_at": "2020-06-09 17:44:34"
+      },
+      {
+        "id": 90,
+        "parent_id": 55,
+        "name": "\u7f16\u8f91",
+        "match": "goods\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 17:44:20",
+        "updated_at": "2020-06-09 17:44:29"
+      },
+      {
+        "id": 91,
+        "parent_id": 56,
+        "name": "\u67e5\u8be2",
+        "match": "goods\/quota\/search",
+        "status": 1,
+        "created_at": "2020-06-09 17:53:23",
+        "updated_at": "2020-06-09 17:53:58"
+      },
+      {
+        "id": 92,
+        "parent_id": 56,
+        "name": "\u65b0\u589e",
+        "match": "goods\/quota\/add",
+        "status": 1,
+        "created_at": "2020-06-09 17:54:15",
+        "updated_at": "2020-06-09 17:54:21"
+      },
+      {
+        "id": 93,
+        "parent_id": 56,
+        "name": "\u7f16\u8f91",
+        "match": "goods\/quota\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 17:54:15",
+        "updated_at": "2020-06-09 17:54:21"
+      },
+      {
+        "id": 94,
+        "parent_id": 62,
+        "name": "\u67e5\u8be2",
+        "match": "order\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 18:02:09",
+        "updated_at": "2020-06-09 18:02:19"
+      },
+      {
+        "id": 95,
+        "parent_id": 62,
+        "name": "\u67e5\u770b\u5b50\u8ba2\u5355",
+        "match": "order\/list\/detail",
+        "status": 1,
+        "created_at": "2020-06-09 18:02:40",
+        "updated_at": "2020-06-09 18:02:40"
+      },
+      {
+        "id": 96,
+        "parent_id": 68,
+        "name": "\u67e5\u8be2",
+        "match": "coupon_use\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 18:11:40",
+        "updated_at": "2020-06-09 18:12:13"
+      },
+      {
+        "id": 97,
+        "parent_id": 68,
+        "name": "\u9886\u7528",
+        "match": "coupon_use\/list\/use",
+        "status": 1,
+        "created_at": "2020-06-09 18:12:43",
+        "updated_at": "2020-06-09 18:13:02"
+      },
+      {
+        "id": 98,
+        "parent_id": 69,
+        "name": "\u67e5\u8be2",
+        "match": "coupon_use\/verify\/search",
+        "status": 1,
+        "created_at": "2020-06-09 18:17:49",
+        "updated_at": "2020-06-09 18:17:49"
+      },
+      {
+        "id": 99,
+        "parent_id": 69,
+        "name": "\u7f16\u8f91",
+        "match": "coupon_use\/verify\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 18:17:49",
+        "updated_at": "2020-06-09 18:18:28"
+      },
+      {
+        "id": 100,
+        "parent_id": 50,
+        "name": "\u67e5\u8be2",
+        "match": "roles\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 18:38:03"
+      },
+      {
+        "id": 101,
+        "parent_id": 50,
+        "name": "\u65b0\u589e",
+        "match": "roles\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 18:41:18"
+      },
+      {
+        "id": 102,
+        "parent_id": 50,
+        "name": "\u7f16\u8f91",
+        "match": "roles\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 18:41:23"
+      },
+      {
+        "id": 103,
+        "parent_id": 51,
+        "name": "\u67e5\u8be2",
+        "match": "user\/list\/search",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 19:06:27"
+      },
+      {
+        "id": 104,
+        "parent_id": 51,
+        "name": "\u65b0\u589e",
+        "match": "user\/list\/add",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 19:07:21"
+      },
+      {
+        "id": 105,
+        "parent_id": 51,
+        "name": "\u7f16\u8f91",
+        "match": "user\/list\/edit",
+        "status": 1,
+        "created_at": "2020-06-09 18:37:05",
+        "updated_at": "2020-06-09 19:07:08"
+      },
+      {
+        "id": 106,
+        "parent_id": 52,
+        "name": "\u5206\u9500\u5546\u9886\u7528\u7ba1\u7406",
+        "match": "distributor\/distributorPriceManage",
+        "status": 1,
+        "created_at": "2020-06-11 13:23:22",
+        "updated_at": "2020-06-11 13:23:36"
+      },
+      {
+        "id": 107,
+        "parent_id": 52,
+        "name": "\u5408\u540c\u7ba1\u7406",
+        "match": "contractManage",
+        "status": 1,
+        "created_at": "2020-07-27 17:22:56",
+        "updated_at": "2020-07-27 17:26:58"
+      },
+      {
+        "id": 108,
+        "parent_id": 107,
+        "name": "\u67e5\u8be2",
+        "match": "contractManage\/list\/search",
+        "status": 1,
+        "created_at": "2020-08-05 13:33:32",
+        "updated_at": "2020-08-05 13:39:11"
+      },
+      {
+        "id": 109,
+        "parent_id": 107,
+        "name": "\u65b0\u589e",
+        "match": "contractManage\/list\/add",
+        "status": 1,
+        "created_at": "2020-08-05 13:35:50",
+        "updated_at": "2020-08-05 13:39:19"
+      },
+      {
+        "id": 110,
+        "parent_id": 107,
+        "name": "\u7f16\u8f91",
+        "match": "contractManage\/list\/edit",
+        "status": 1,
+        "created_at": "2020-08-05 13:36:28",
+        "updated_at": "2020-08-05 13:39:27"
+      },
+      {
+        "id": 111,
+        "parent_id": 85,
+        "name": "\u8fd0\u8425\u62a5\u8868-\u4f9b\u5e94\u5546",
+        "match": "report\/order\/supplier",
+        "status": 1,
+        "created_at": "2020-08-05 16:02:45",
+        "updated_at": "2020-08-05 16:02:45"
+      },
+      {
+        "id": 112,
+        "parent_id": 85,
+        "name": "\u8fd0\u8425\u62a5\u8868-\u5206\u9500\u5546",
+        "match": "report\/order\/distributor",
+        "status": 1,
+        "created_at": "2020-08-06 11:11:46",
+        "updated_at": "2020-08-06 11:12:09"
+      },
+      {
+        "id": 113,
+        "parent_id": 52,
+        "name": "\u6536\u4ed8\u6b3e\u53ca\u7968\u636e\u7ba1\u7406",
+        "match": "payment\/list",
+        "status": 1,
+        "created_at": "2020-08-06 15:47:50",
+        "updated_at": "2020-08-06 15:47:50"
+      },
+      {
+        "id": 114,
+        "parent_id": 51,
+        "name": "\u91cd\u7f6e\u5bc6\u7801",
+        "match": "user\/list\/resetPassword",
+        "status": 1,
+        "created_at": "2020-08-14 13:34:46",
+        "updated_at": "2020-08-14 13:34:46"
+      }
+    ]
+  }
+}

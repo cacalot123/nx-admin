@@ -1,0 +1,11 @@
+/**
+ * 修改
+ *
+ * @url /edit
+ */
+{
+  "status": "success",
+  "result": {
+    "id": "@number"
+  }
+}

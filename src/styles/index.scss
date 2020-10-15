@@ -4,12 +4,14 @@
 @import './element-ui.scss';
 @import './sidebar.scss';
 @import './btn.scss';
+@import './element-reset.scss';
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
 }
 
 label {
@@ -38,6 +40,10 @@ a:hover {
   color: inherit;
   outline: none;
   text-decoration: none;
+}
+
+a:hover {
+  color: $mainColor !important;
 }
 
 div:focus {
@@ -69,9 +75,9 @@ a:hover {
 }
 
 //main-container全局样式
-// .app-main {
-//   min-height: 100%;
-// }
+.app-main {
+  min-height: 100%;
+}
 
 code {
   background: #eef1f6;
@@ -81,9 +87,11 @@ code {
   line-height: 36px;
   font-size: 15px;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+
   a {
     color: #337ab7;
     cursor: pointer;
+
     &:hover {
       color: rgb(32, 160, 255);
     }
@@ -131,6 +139,7 @@ code {
   padding: 1rem;
   line-height: 1.6rem;
   word-spacing: .05rem;
+
   a {
     color: #42b983;
     font-weight: 600;
@@ -156,8 +165,23 @@ code {
   padding-bottom: 0;
 }
 
+
 /*sidebar*/
 
-.el-submenu__title i {
-  color: white !important;
+.el-menu-item:hover {
+  outline: 0 !important;
+  color: $menuHover !important;
 }
+
+.el-menu-item.is-active {
+  color: #fff !important;
+  background: $menuHover !important;
+}
+
+.el-submenu__title:focus, .el-submenu__title:hover {
+  outline: 0 !important;
+  color: $menuHover !important;
+  background: none !important;
+}
+
+
